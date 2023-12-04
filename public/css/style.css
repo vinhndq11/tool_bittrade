@@ -1,0 +1,28 @@
+.bg-login-image {
+    background: url(../img/make_money.jpg) center;
+    background-size: cover;
+}
+.count_down{
+    color: white !important;
+    font-weight: 800;
+}
+.trial_count_group[data-user_mode="unlimited"], .trial_count_group[data-user_mode="member"]{
+    display: none;
+}
+.expired_tool_at_group[data-user_mode="unlimited"]{
+    display: none;
+}
+.expired_tool_at_group[data-user_mode="member"]{
+    flex: initial;
+    max-width: 100%;
+}
+.expired_tool_at_group[data-is_expired="1"]>button, .trial_count_group[data-trial_count="0"]>button{
+    color: #fff;
+    background-color: #e74a3b;
+    border-color: #e74a3b;
+}
+.trial_count_group[data-trial_count="1"]>button{
+    color: #fff;
+    background-color: #f6c23e;
+    border-color: #f6c23e;
+}

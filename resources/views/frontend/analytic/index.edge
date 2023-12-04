@@ -1,0 +1,77 @@
+@layout('frontend/layout/index')
+@section('content')
+    <div class="container-fluid">
+        <div class="d-sm-flex align-items-center justify-content-between mb-4">
+            <h1 class="h3 mb-0 text-gray-800">Tổng quan</h1>
+        </div>
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="card shadow mb-4">
+                    <div class="card-header py-3">
+                        <h6 class="m-0 float-left font-weight-bold text-primary">Trạng thái tool</h6>
+                        <a class="float-right btn btn-primary btn-sm" target="_blank" href="https://bittrade.fun/trading">
+                            Xem trên <b>{{ weDomain }}</b>  <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                    <div class="card-body text-center">
+                        <div class="row">
+                            <div data-user_mode="{{ user_mode }}" data-trial_count="{{ trial_count || 0 }}" class="trial_count_group col-sm-6 col-xs-12 text-center">
+                                <button class="btn-success btn btn-icon-split btn-lg">
+                                    <span class="icon text-white-50 trial_count">{{ trial_count || 0 }}</span>
+                                    <span class="text">Lần dùng thử tool</span>
+                                </button>
+                            </div>
+                            <div data-user_mode="{{ user_mode }}" data-is_expired="{{ is_expired_tool }}" class="expired_tool_at_group col-sm-6 col-xs-12 text-center">
+                                <button class="btn-success btn btn-icon-split btn-lg">
+                                    <span class="text">Hạn dùng tool</span>
+                                    <span class="icon text-white-50 expired_tool_at">{{ expired_tool_at || '' }}</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 col-xs-12">
+                <div class="card shadow mb-4">
+                    <div class="card-header py-3">
+                        <h6 class="m-0 font-weight-bold text-primary">Trạng thái trên {{ weName }}</h6>
+                    </div>
+                    <div class="card-body text-center">
+                        <button class="btn-status btn btn-icon-split btn-lg">
+                            <span class="icon text-white-50 count_down">0</span>
+                            <span class="text status">Chờ kết quả</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6  col-xs-12">
+                <div class="card shadow mb-4">
+                    <div class="card-header py-3">
+                        <h6 class="m-0 font-weight-bold text-primary">Dự đoán kết quả</h6>
+                    </div>
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-sm-6 col-xs-12 text-center">
+                                <button class="btn btn-light btn-icon-split btn-lg btn-up">
+                                    <span class="text">Tăng</span>
+                                    <span class="icon text-white-50">
+                                            <i class="fas fa-level-up-alt"></i>
+                                        </span>
+                                </button>
+                            </div>
+                            <div class="col-sm-6 col-xs-12  text-center">
+                                <button class="btn btn-light btn-icon-split btn-lg btn-down">
+                                        <span class="icon text-white-50">
+                                            <i class="fas fa-level-down-alt"></i>
+                                        </span>
+                                    <span class="text">Giảm</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+@endsection
